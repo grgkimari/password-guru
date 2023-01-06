@@ -1,4 +1,33 @@
-import { SET_TEXT, CLEAR } from "../reducers"
+import { SET_TEXT, CLEAR, CHECK_STRENGTH } from "../reducers"
+
+const stringifyStrength = (strength) => {
+    switch(strength){
+        case 1:
+            return "Very weak"
+        case 2:
+            return "Very weak"
+        case 3:
+            return "Very weak"
+        case 4:
+            return "Weak"
+        case 5:
+            return "Weak"
+        case 6:
+            return "Okay"
+        case 7:
+            return "Strong"
+        case 8:
+            return "Strong"
+        case 9:
+            return "Very Strong"
+        case 10:
+            return "Very Strong"
+            case 11 : 
+                return "Legendary"
+        default:
+            return "Type password in the input field above."
+    }
+}
 
 const Checker = (props) => {
     return(
@@ -12,11 +41,19 @@ const Checker = (props) => {
                         type : SET_TEXT,
                         payload : event.target.value
                     });
+                    props.dispatch({
+                        type : CHECK_STRENGTH,
+                    });
                 }
             }
             ></input>
-            <div className="display" title="Result"></div>
-            <button className="btn">Check</button>
+            <div className="display" title="Result">
+                <h1>{props.strength}</h1>
+                <h2>{
+                    stringifyStrength(props.strength)
+                    }</h2>
+                </div>
+            {/* <button className="btn">Check</button> */}
             <button className="btn">Generate</button>
             <button className="btn" 
             onClick={() => {
