@@ -22,7 +22,7 @@ describe(
         render(<Checker />)
       const checkButton = screen.getByRole("button",
       {
-        name : "check"
+        name : "Check"
       })
       expect(checkButton).toBeInTheDocument()
       }
@@ -31,10 +31,7 @@ describe(
       "renders an input box",
       () => {
         render(<Checker />)
-      const inputField = screen.getByRole("textBox",
-      {
-        name : "password"
-      })
+      const inputField = screen.getByPlaceholderText("Enter the password here.")
       expect(inputField).toBeInTheDocument()
       }
     )
