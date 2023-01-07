@@ -1,5 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Fira+Sans:wght@300&display=swap');
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Fira Sans', 'sans-serif';
+  display: grid;
+  grid-template-areas: 
+  "clip clip"
+  "checker checker"
+  ;
+  place-content: center;
+  background-color: bisque;
 }
 
+.checker{
+  grid-area: checker;
+  margin: 1rem auto;
+  display: grid;
+  gap: 1rem;
+  place-content: center;
+  grid-template-areas:
+  
+  "prompt password"
+  "score score"
+  "btn1 btn2"
+  ;
+  width: clamp(650px, 80vw, 800px);
+  border : 2px solid black;
+  margin: 1rem;
+  padding: 1rem;
+}
 
+.label {
+  grid-area: prompt;
+  font-size: 1.5rem;
+}
+
+#password {
+  grid-area: password;
+  font-family: 'East Sea Dokdo';
+  font-size: 1.5rem;
+}
+
+.display{
+  grid-area: score;
+}
+
+#clear{
+  grid-area: btn1;
+  background-color: rgb(248, 124, 124);
+  font-weight: bolder;
+  font-size: 1.15rem;
+}
+
+#generate{
+  grid-area: btn2;
+  background-color: rgb(110, 223, 95);
+  font-weight: bolder;
+  font-size: 1.15rem;
+}
+
+.btn{
+  width : 120px;
+  margin : 1rem;
+  border-radius: 15px;
+  min-height: 30px;
+  border: 1px solid gray;
+}
+
+.icon{
+
+  height: 80%;
+  align-self: center;
+}
+
+.clipboard{
+  margin: 1rem;
+  min-width: 300px;
+  grid-area: clip;
+  background-color: rgba(219, 213, 213, 0.5);
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.requirementList{
+  display: flex;
+  flex-direction: column;
+}
+
+.requirement{
+  display: flex;
+  gap: 15px;
+  height: 25px;
+}
+
+.description{
+  align-self: center;
+}

@@ -33,7 +33,7 @@ const Checker = (props) => {
     return(
         <div className="checker">
 
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="label">Password</label>
             <input type="text" placeholder="Enter the password here." id="password" value={props.passwordText}
             onChange={
                 (event) => {
@@ -49,13 +49,13 @@ const Checker = (props) => {
             ></input>
             <div className="display" title="Result">
                 <h1>{props.strength}</h1>
-                <h2>{
+                <h3>{
                     stringifyStrength(props.strength)
-                    }</h2>
+                    }</h3>
                 </div>
             {/* <button className="btn">Check</button> */}
-            <button className="btn">Generate</button>
-            <button className="btn" 
+            <button className="btn" id="generate">Generate</button>
+            <button className="btn" id="clear" 
             onClick={() => {
                 props.dispatch({
                     type : CLEAR
