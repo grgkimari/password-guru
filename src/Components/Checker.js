@@ -1,7 +1,9 @@
-import { SET_TEXT, CLEAR, CHECK_STRENGTH, GENERATE_PASSWORD } from "../reducers"
+import { SET_TEXT, CLEAR, CHECK_STRENGTH, GENERATE_PASSWORD } from "../reducers/mainreducer"
 
 const stringifyStrength = (strength) => {
     switch(strength){
+        case 0:
+            return "Terrible"
         case 1:
             return "Very weak"
         case 2:
@@ -49,9 +51,9 @@ const Checker = (props) => {
             }
             ></input>
             <div className="display" title="Result">
-                <h1>{props.strength}</h1>
-                <h3>{
-                    stringifyStrength(props.strength)
+                <h1 aria-label="strength">{props.strength === null ? "0" : props.strength}</h1>
+                <h3 aria-label="string-strength">{
+                    props.strength === null ? "Type password in the input field above." : stringifyStrength(props.strength)
                     }</h3>
                 </div>
             {/* <button className="btn">Check</button> */}

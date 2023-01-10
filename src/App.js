@@ -1,7 +1,7 @@
 import './App.css';
 import Checker from './Components/Checker';
 import {useReducer} from 'react'
-import mainReducer, {initialState} from './reducers';
+import mainReducer, {initialState} from './reducers/mainreducer';
 
 
 
@@ -115,5 +115,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

@@ -112,6 +112,8 @@ function gradePassword(password){
   }
 
 const mainReducer = (state = initialState, action) => {
+  console.log("Action : " + JSON.stringify(action))
+  console.log("State : " + JSON.stringify(state))
     switch(action.type){
         case GENERATE_PASSWORD:
           const newState =  {
