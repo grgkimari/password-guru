@@ -1,12 +1,10 @@
-import './App.css';
-import Checker from './Components/Checker';
-import {useReducer} from 'react'
-import mainReducer, {initialState} from './reducers/mainreducer';
-
-
+import "./App.css";
+import Checker from "./Components/Checker";
+import { useReducer } from "react";
+import mainReducer, { initialState } from "./reducers/mainreducer";
 
 function App() {
-  const[state, dispatch] = useReducer(mainReducer, initialState)
+  const [state, dispatch] = useReducer(mainReducer, initialState);
   const commonPasswords = [
     "password",
     "123456",
@@ -74,44 +72,114 @@ function App() {
     "zaq1zaq1",
     "football",
     "000000",
-    "123qwe"
-]
-
+    "123qwe",
+  ];
 
   return (
-    <div className="App" >
-      {console.log("State = " + JSON.stringify(state))}
-      <div className='clipboard'>
-      <p>A good password :</p>
-    <ul className='requirementList' >
-      <li className='requirement'>
-        <img alt="icon" className='icon' src={state.passwordText.length > 7 ?"https://cdn-icons-png.flaticon.com/128/5290/5290058.png" : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"}></img>
-        <p className='description'>Should contain at least eight characters.</p>
-      </li>
-      <li className='requirement'>
-        <img alt="icon" className='icon' src={/.*[A-Z]+.*/.test(state.passwordText) ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png" : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"}></img>
-        <p className='description'>Should contain at least one capital letter.</p>
-      </li>
-      <li className='requirement'>
-        <img alt="icon" className='icon' src={/.*[a-z]+.*/.test(state.passwordText) ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png" : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"}></img>
-        <p className='description'>Should contain at least one small letter.</p>
-      </li>
-      <li className='requirement'>
-        <img alt="icon" className='icon' src={/.*[+-/#@~.,%'!$^\\?:(){}[\]_]+.*/.test(state.passwordText) ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png" : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"}></img>
-        <p className='description'>Should contain at least on <a href="https://docs.oracle.com/cd/E11223_01/doc.910/e11197/app_special_char.htm#BABCEHDG">special character</a>.</p>
-      </li>
-      <li className='requirement'>
-        <img alt="icon" className='icon' src={/.*[0-9]+.*/.test(state.passwordText) ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png" : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"}></img>
-        <p className='description'>Should contain at least one digit.</p>
-      </li>
-      <li className='requirement'>
-        <img alt="icon" className='icon' src={commonPasswords.indexOf(state.passwordText.toLowerCase()) === -1 && state.passwordText.length > 5 ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png" : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"}></img>
-        <p className='description'>Should not be in <a href='https://github.com/vlhomme/list-of-most-common-password/blob/master/passwords.json'>list of common passwords</a> .</p>
-      </li>
-    </ul>
+    <div className="App">
+      {}
+      <div className="clipboard">
+        <p>A good password :</p>
+        <ul className="requirementList">
+          <li className="requirement">
+            <img
+              alt="icon"
+              className="icon"
+              src={
+                state.passwordText.length > 7
+                  ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png"
+                  : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"
+              }
+            ></img>
+            <p className="description">
+              Should contain at least eight characters.
+            </p>
+          </li>
+          <li className="requirement">
+            <img
+              alt="icon"
+              className="icon"
+              src={
+                /.*[A-Z]+.*/.test(state.passwordText)
+                  ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png"
+                  : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"
+              }
+            ></img>
+            <p className="description">
+              Should contain at least one capital letter.
+            </p>
+          </li>
+          <li className="requirement">
+            <img
+              alt="icon"
+              className="icon"
+              src={
+                /.*[a-z]+.*/.test(state.passwordText)
+                  ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png"
+                  : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"
+              }
+            ></img>
+            <p className="description">
+              Should contain at least one small letter.
+            </p>
+          </li>
+          <li className="requirement">
+            <img
+              alt="icon"
+              className="icon"
+              src={
+                /.*[+-/#@~.,%'!$^\\?:(){}[\]_]+.*/.test(state.passwordText)
+                  ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png"
+                  : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"
+              }
+            ></img>
+            <p className="description">
+              Should contain at least on{" "}
+              <a href="https://docs.oracle.com/cd/E11223_01/doc.910/e11197/app_special_char.htm#BABCEHDG">
+                special character
+              </a>
+              .
+            </p>
+          </li>
+          <li className="requirement">
+            <img
+              alt="icon"
+              className="icon"
+              src={
+                /.*[0-9]+.*/.test(state.passwordText)
+                  ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png"
+                  : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"
+              }
+            ></img>
+            <p className="description">Should contain at least one digit.</p>
+          </li>
+          <li className="requirement">
+            <img
+              alt="icon"
+              className="icon"
+              src={
+                commonPasswords.indexOf(state.passwordText.toLowerCase()) ===
+                  -1 && state.passwordText.length > 5
+                  ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png"
+                  : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"
+              }
+            ></img>
+            <p className="description">
+              Should not be in{" "}
+              <a href="https://github.com/vlhomme/list-of-most-common-password/blob/master/passwords.json">
+                list of common passwords
+              </a>{" "}
+              .
+            </p>
+          </li>
+        </ul>
       </div>
-    
-     <Checker passwordText={state.passwordText}  dispatch={dispatch} strength = {state.strength}/>
+
+      <Checker
+        passwordText={state.passwordText}
+        dispatch={dispatch}
+        strength={state.strength}
+      />
     </div>
   );
 }
