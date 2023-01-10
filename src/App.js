@@ -72,7 +72,7 @@ function App() {
     "donald",
     "batman",
     "zaq1zaq1",
-    "Football",
+    "football",
     "000000",
     "123qwe"
 ]
@@ -80,8 +80,9 @@ function App() {
 
   return (
     <div className="App" >
+      {console.log("State = " + JSON.stringify(state))}
       <div className='clipboard'>
-      <p>A good password  should have the following features</p>
+      <p>A good password :</p>
     <ul className='requirementList' >
       <li className='requirement'>
         <img alt="icon" className='icon' src={state.passwordText.length > 7 ?"https://cdn-icons-png.flaticon.com/128/5290/5290058.png" : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"}></img>
@@ -104,13 +105,13 @@ function App() {
         <p className='description'>Should contain at least one digit.</p>
       </li>
       <li className='requirement'>
-        <img alt="icon" className='icon' src={commonPasswords.indexOf(state.passwordText) === -1 && state.passwordText.length > 5 ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png" : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"}></img>
+        <img alt="icon" className='icon' src={commonPasswords.indexOf(state.passwordText.toLowerCase()) === -1 && state.passwordText.length > 5 ? "https://cdn-icons-png.flaticon.com/128/5290/5290058.png" : "https://cdn-icons-png.flaticon.com/512/7698/7698976.png"}></img>
         <p className='description'>Should not be in <a href='https://github.com/vlhomme/list-of-most-common-password/blob/master/passwords.json'>list of common passwords</a> .</p>
       </li>
     </ul>
       </div>
     
-     <Checker passwordText={state.passwordText} dispatch={dispatch} strength = {state.strength}/>
+     <Checker passwordText={state.passwordText}  dispatch={dispatch} strength = {state.strength}/>
     </div>
   );
 }
