@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/password-guru/static/css/main.7ef8cdb0.css",
-    "main.js": "/password-guru/static/js/main.5481a9a1.js",
+    "main.js": "/password-guru/static/js/main.e8fdf63c.js",
     "index.html": "/password-guru/index.html",
     "main.7ef8cdb0.css.map": "/password-guru/static/css/main.7ef8cdb0.css.map",
-    "main.5481a9a1.js.map": "/password-guru/static/js/main.5481a9a1.js.map"
+    "main.e8fdf63c.js.map": "/password-guru/static/js/main.e8fdf63c.js.map"
   },
   "entrypoints": [
     "static/css/main.7ef8cdb0.css",
-    "static/js/main.5481a9a1.js"
+    "static/js/main.e8fdf63c.js"
   ]
 }
