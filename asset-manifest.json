@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/password-guru/static/css/main.7ef8cdb0.css",
+    "main.js": "/password-guru/static/js/main.5481a9a1.js",
+    "index.html": "/password-guru/index.html",
+    "main.7ef8cdb0.css.map": "/password-guru/static/css/main.7ef8cdb0.css.map",
+    "main.5481a9a1.js.map": "/password-guru/static/js/main.5481a9a1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ef8cdb0.css",
+    "static/js/main.5481a9a1.js"
+  ]
+}
