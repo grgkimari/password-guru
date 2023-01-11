@@ -19,7 +19,7 @@ describe("Reducer", () => {
     expect(newState.passwordText).toEqual("");
     expect(newState.strength).toEqual(null);
   });
-  test("updates state correctly", () => {
+  test("updates state correctly with SET_TEXT action (simulated)", () => {
     let newState = dispatch(undefined, {
       type: SET_TEXT,
       payload: "waba",
